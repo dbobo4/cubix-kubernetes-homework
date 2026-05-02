@@ -1,0 +1,15 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: backapp
+  labels:
+    app: backapp
+    homework: backapp
+    training: block3
+spec:
+  selector:
+    app: backapp
+  ports:
+    - protocol: TCP
+      port: 80
+      targetPort: 8080

@@ -1,0 +1,30 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: backapp
+  labels:
+    app: backapp
+    homework: backapp
+    training: block3
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: backapp
+  template:
+    metadata:
+      labels:
+        app: backapp
+        homework: backapp
+        training: block3
+    spec:
+      containers:
+        - name: backapp
+          image: quay.io/drsylent/cubix/block3/homework-backapp:springboot3
+          ports:
+            - containerPort: 8080
+          env:
+            - name: APP_DEFAULT_MESSAGE
+              value: backapp
+            - name: JAVA_OPTS
+              value: -Dspring.main.banner-mode=off

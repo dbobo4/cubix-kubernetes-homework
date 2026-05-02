@@ -1,0 +1,32 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: frontapp
+  labels:
+    app: frontapp
+    homework: frontapp
+    training: block3
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: frontapp
+  template:
+    metadata:
+      labels:
+        app: frontapp
+        homework: frontapp
+        training: block3
+    spec:
+      containers:
+        - name: frontapp
+          image: quay.io/drsylent/cubix/block3/homework-frontapp:springboot3
+          ports:
+            - containerPort: 8080
+          env:
+            - name: APP_DEFAULT_MESSAGE
+              value: frontapp
+            - name: JAVA_OPTS
+              value: ""
+            - name: BACK_URL
+              value: http://backapp
