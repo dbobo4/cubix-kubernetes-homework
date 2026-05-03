@@ -1,4 +1,4 @@
-apiVersion: apps/v1
+﻿apiVersion: apps/v1
 kind: Deployment
 metadata:
   name: backapp
@@ -11,6 +11,8 @@ spec:
   selector:
     matchLabels:
       app: backapp
+      homework: backapp
+      training: block3
   template:
     metadata:
       labels:
@@ -27,4 +29,4 @@ spec:
             - name: APP_DEFAULT_MESSAGE
               value: backapp
             - name: JAVA_OPTS
-              value: -Dspring.main.banner-mode=off
+              value: "-Dspring.main.banner-mode=off"
