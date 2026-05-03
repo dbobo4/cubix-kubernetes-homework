@@ -1,4 +1,4 @@
-﻿# Cubix Kubernetes Homework - Focused Submission (Adam Kovacs)
+﻿# Fixed Cubix Kubernetes Homework (Adam Kovacs)
 
 ## Required installation / deployment commands
 
@@ -19,8 +19,6 @@ kubectl apply -f .\k8s\frontapp-ingress.yaml
 ```powershell
 kubectl logs deploy/backapp
 ```
-
-Expected note: the Spring Boot banner is disabled for the backapp because JAVA_OPTS is set to -Dspring.main.banner-mode=off.
 
 ## One kubectl command for listing all frontapp related resources
 
